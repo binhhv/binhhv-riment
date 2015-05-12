@@ -1,0 +1,146 @@
+body {
+	font: 1em/150% Arial, Helvetica, sans-serif;
+}
+.page-to-top{
+	margin-top: 20px !important;
+}
+.container{
+	max-width: 800px;
+	margin: 0 auto;
+}
+img{
+	max-width: 100%;
+}
+.title-option-1{
+	color: white;
+	font-weight: bold;
+	text-align: left;
+	font-size: 15px;
+	background-color: #85B869;
+	padding: 5px 0 5px 10px;
+}
+.title-option-2{
+	color: white;
+	font-weight: bold;
+	text-align: left;
+	font-size: 15px;
+	background-color: #44C2CF;
+	padding: 5px 0 5px 10px;
+}
+.title-option-3{
+	color: white;
+	font-weight: bold;
+	text-align: left;
+	font-size: 15px;
+	background-color: #B9B7A9;
+	padding: 5px 0 5px 10px;
+}
+.title-option-4{
+	color: white;
+	font-weight: bold;
+	text-align: left;
+	font-size: 15px;
+	background-color: #7DC5B4;
+	padding: 5px 0 5px 10px;
+}
+.option-1{
+	border: 1px solid #85B869;
+	
+}
+.option-2{
+	border: 1px solid #44C2CF;
+}
+.option-3{
+	border: 1px solid #B9B7A9;
+}
+.option-4{
+	border: 1px solid #7DC5B4;
+}
+.content-option-1{
+	background-color: #B5E899;
+}
+.content-option-2{
+	background-color: #AAF2FF;
+}
+.content-option-3{
+	background-color: #E9E7D9;
+}
+.content-option-4{
+	background-color: #ADF5E4;
+}
+.no-padding{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+.padding-option{
+	padding: 1px;
+}
+.content-option-1 div[class*='col-']{
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+.content-option-2 div[class*='col-']{
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+.content-option-3 div[class*='col-']{
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+.content-option-4 div[class*='col-']{
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+.title-content-option{
+	font-size: 15px;
+	margin: auto;
+}
+
+.image-button img{
+	height: 35px;
+	 display: block;
+    margin: 0 auto;
+}
+
+
+ @media screen and (min-width: 768px) { 
+  .content-option-1, .content-option-1 > div[class*='col-'] {  
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex:1 1 auto;
+  }
+  .content-option-2, .content-option-2 > div[class*='col-'] {  
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex:1 1 auto;
+  }
+  .content-option-3, .content-option-3 > div[class*='col-'] {  
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex:1 1 auto;
+  }
+  .content-option-4, .content-option-4 > div[class*='col-'] {  
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex:1 1 auto;
+  }
+
+}
+
+ @media screen and (max-width: 767px) {
+  .title-content-option{
+  text-align: center;
+  }
+}
