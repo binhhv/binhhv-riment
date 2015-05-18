@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Handles requests for the application home page.
@@ -33,7 +34,35 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "home-page";
+	}
+	
+	@RequestMapping(value = {"/survey"}, method = RequestMethod.GET)
+	public String goToSurvey(@RequestParam(value="id", required=false)String id,Locale locale, Model model) {
+		logger.info("Welcome survey! The client locale is {}.", locale);
+		if(id != null){
+			try {
+				int idSurvey = Integer.parseInt(id);
+				if(idSurvey > 8 || idSurvey < 1){
+					return "redirect:/";
+				}
+				else{
+					if(idSurvey > 6){
+						return "content-page-2";
+					}
+					else{
+						return "content-page-1";
+					}
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				return "redirect:/";
+			}
+		}
+		else{
+			return "redirect:/";
+		}
+	
 	}
 	
 }

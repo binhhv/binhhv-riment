@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/includes/include.jsp" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>日本製紙クレシア ワイ!ワイ!キャンペーン</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +42,7 @@
 							①キムワイプS-200購入者はこちら
 						</div>
 						<div class="col-md-4 col-xs-12 col-sm-6 title-content-option image-button">
-							<img src="${APP_CONTEXT }/resources/images/btn_entry.png">
+							<a href='<c:url value="/survey.html?id=1" />'><img src="${APP_CONTEXT }/resources/images/btn_entry.png"></a>
 						</div>
 					</div>
 					<div class="col-md-12 col-xs-12 col-sm-12 content-option-1 no-padding">
@@ -50,7 +50,7 @@
 							②キムワイプM-150購入者はこちら
 						</div>
 						<div class="col-md-4 col-xs-12 col-sm-6 title-content-option image-button">
-							<img src="${APP_CONTEXT }/resources/images/btn_entry.png">
+							<a href='<c:url value="/survey.html?id=2" />'><img src="${APP_CONTEXT }/resources/images/btn_entry.png"></a>
 						</div>
 					</div>
 					<div class="col-md-12 col-xs-12 col-sm-12 content-option-1 no-padding">
@@ -58,7 +58,7 @@
 							③キムワイプL-100購入者はこちら
 						</div>
 						<div class="col-md-4 col-xs-12 col-sm-6 title-content-option image-button">
-							<img src="${APP_CONTEXT }/resources/images/btn_entry.png">
+							<a href='<c:url value="/survey.html?id=3" />'><img src="${APP_CONTEXT }/resources/images/btn_entry.png"></a>
 						</div>
 					</div>
 				</div>	
@@ -76,7 +76,7 @@
 							④JKワイパー150-S購入者はこちら
 						</div>
 						<div class="col-md-4 col-xs-12 col-sm-6 title-content-option image-button">
-							<img src="${APP_CONTEXT }/resources/images/btn_entry.png">
+							<a href='<c:url value="/survey.html?id=4" />'><img src="${APP_CONTEXT }/resources/images/btn_entry.png"></a>
 						</div>
 					</div>
 					<div class="col-md-12 col-xs-12 col-sm-12 content-option-2 no-padding">
@@ -84,7 +84,7 @@
 							⑤JKワイパー100-S購入者はこちら
 						</div>
 						<div class="col-md-4 col-xs-12 col-sm-6 title-content-option image-button">
-							<img src="${APP_CONTEXT }/resources/images/btn_entry.png">
+							<a href='<c:url value="/survey.html?id=5" />'><img src="${APP_CONTEXT }/resources/images/btn_entry.png"></a>
 						</div>
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 							④JKワイパー150-S購入者はこちら
 						</div>
 						<div class="col-md-4 col-xs-12 col-sm-6 title-content-option image-button">
-							<img src="${APP_CONTEXT }/resources/images/btn_entry.png">
+							<a href='<c:url value="/survey.html?id=6" />'><img src="${APP_CONTEXT }/resources/images/btn_entry.png"></a>
 						</div>
 					</div>
 					
@@ -120,7 +120,7 @@
 							⑦キムタオル4つ折り(茶色)購入者はこちら
 						</div>
 						<div class="col-md-4 col-xs-12 col-sm-6 title-content-option image-button">
-							<img src="${APP_CONTEXT }/resources/images/btn_entry.png">
+							<a href='<c:url value="/survey.html?id=7" />'><img src="${APP_CONTEXT }/resources/images/btn_entry.png"></a>
 						</div>
 					</div>
 					<div class="col-md-12 col-xs-12 col-sm-12 content-option-4 no-padding">
@@ -128,7 +128,7 @@
 							⑧キムワイプホワイト4つ折り購入者はこちら
 						</div>
 						<div class="col-md-4 col-xs-12 col-sm-6 title-content-option image-button">
-							<img src="${APP_CONTEXT }/resources/images/btn_entry.png">
+							<a href='<c:url value="/survey.html?id=8" />'><img src="${APP_CONTEXT }/resources/images/btn_entry.png"></a>
 						</div>
 					</div>
 					

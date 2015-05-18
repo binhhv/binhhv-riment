@@ -1,0 +1,98 @@
+body {
+	font:12px "Hiragino Maru Gothic ProN",meiryo,"MS Gothic",arial;
+}
+.page-to-top{
+	margin-top: 20px !important;
+}
+.container{
+	max-width: 800px;
+	margin: 0 auto;
+}
+img{
+	max-width: 100%;
+}
+.nomargin{
+	margin: 0 !important;
+}
+.row-left{
+	background-color: #8CC63F;
+	border-top: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	width: 100%;
+	font-weight: bold;
+	padding: 5px;
+}
+.row-left img{
+	position: absolute;
+	top: 0px;
+	right: 20px;
+}
+.row-right{
+	background-color: #FFFFFF;
+	border: 1px solid #F4DE62;
+	width: 100%;
+	padding: 5px;
+}
+
+.margin-bottom-row{
+	margin-bottom: 2px;
+}
+.input-text{
+	width: 100%;
+	margin: auto;
+}
+.name-text{
+	text-align: right;
+}
+.input-name-text{
+	width: 150px;
+}
+
+.nopadding{
+	padding: 0 !important;
+}
+.row-title{
+	padding: 10px;
+	background-color: #009245;
+	color: white;
+	font-weight: bold;
+}
+.input-text-area{
+	width: 80px;
+}
+.input-text-phone{
+	width: 50px;
+}
+.input-textarea{
+	width: 100%;
+}
+@media screen and (max-width: 767px) { 
+	.margin-bottom-row-responsive{
+		margin-bottom: 2px;
+	}
+	.link-area{
+		margin-top: 10px;
+	}		
+}
+@media screen and (min-width: 768px) { 
+  .row-survey, .row-survey > div[class*='col-'] {  
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex:1 1 auto;
+  }
+  
+	 .nopadding-right{
+		padding-right: 0px;
+	}
+	.nopadding-left{
+		padding-left: 0px;
+	}
+	
+	.row-input-text{
+	margin-top: 5px;}
+
+}
