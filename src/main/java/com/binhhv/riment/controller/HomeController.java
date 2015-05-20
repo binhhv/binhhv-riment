@@ -4,13 +4,21 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.binhhv.riment.model.SurveyEntity;
+import com.binhhv.riment.service.StateService;
+import com.binhhv.riment.service.SurveyService;
 
 /**
  * Handles requests for the application home page.
@@ -18,6 +26,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 	
+	@Autowired
+	private SurveyService surveyService;
+	@Autowired
+	private StateService stateService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
@@ -40,6 +52,7 @@ public class HomeController {
 	@RequestMapping(value = {"/survey"}, method = RequestMethod.GET)
 	public String goToSurvey(@RequestParam(value="id", required=false)String id,Locale locale, Model model) {
 		logger.info("Welcome survey! The client locale is {}.", locale);
+		
 		if(id != null){
 			try {
 				int idSurvey = Integer.parseInt(id);
@@ -47,10 +60,13 @@ public class HomeController {
 					return "redirect:/";
 				}
 				else{
+					model.addAttribute("states", stateService.getListState());
 					if(idSurvey > 6){
+						
 						return "content-page-2";
 					}
 					else{
+						model.addAttribute("form", new SurveyEntity());
 						return "content-page-1";
 					}
 				}
@@ -63,6 +79,11 @@ public class HomeController {
 			return "redirect:/";
 		}
 	
+	}
+	@RequestMapping(value="/addSurvey",method =  RequestMethod.POST)
+	public String addSurvey(@ModelAttribute("form") SurveyEntity form,HttpServletRequest request){
+		surveyService.addSurvey(form);
+		return "redirect:/";
 	}
 	
 }

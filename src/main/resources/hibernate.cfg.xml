@@ -6,6 +6,8 @@
 <hibernate-configuration>
     <session-factory>        
         <mapping class="com.binhhv.riment.model.AreaEntity" />
+        <mapping class="com.binhhv.riment.model.SurveyEntity" />
+        <mapping class="com.binhhv.riment.model.StateEntity" />
     </session-factory> 
           
 </hibernate-configuration>

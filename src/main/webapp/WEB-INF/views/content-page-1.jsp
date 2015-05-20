@@ -28,7 +28,7 @@
 			<img alt="header" src="${APP_CONTEXT }/resources/images/title6.png">
 		</div>
 	</div>
-	<form action="/">
+	<form:form method="post"  action="${pageContext.request.contextPath}/addSurvey.html" id="form-survey" modelAttribute="form">
 	<!-- row 1 -->
 	<div class="row row-survey">
 		<div class="col-md-5 col-sm-12 col-xs-12 nopadding-right">
@@ -44,11 +44,11 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 margin-bottom-row">
-					1枚目<input type="text"> 
+					1枚目<form:input path="idsp1"/> 
 				</div>
 				
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					2枚目<input type="text"> 
+					2枚目<form:input path="idsp2"/>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					A賞・B賞への応募の方は応募IDを２つ入力して下さい。
@@ -79,7 +79,7 @@
 					<div class="col-md-6 col-sm-6 col-xs-6">
 						<img alt="a" src="${APP_CONTEXT }/resources/images/a.png"><br>
 						<label>
-							<input type="radio" name="i_source">
+							<form:radiobutton path="courses" value="1"/>
 							A賞（応募ID 2枚）
 							キムワイプオリジナル
 							BRUNOハイブリッド加湿器
@@ -89,7 +89,7 @@
 					<div class="col-md-6 col-sm-6 col-xs-6">
 						<img alt="a" src="${APP_CONTEXT }/resources/images/b.png"><br>
 						<label>
-							<input type="radio" name="i_source">
+							<form:radiobutton path="courses" value="2"/>
 							B賞（応募ID 2枚）
 							キムタオルオリジナル
 							タイガーポータブルクーラー
@@ -101,7 +101,7 @@
 					<div class="col-md-6 col-sm-6 col-xs-6">
 						<img alt="a" src="${APP_CONTEXT }/resources/images/c.png"><br>
 						<label>
-							<input type="radio" name="i_source">
+							<form:radiobutton path="courses" value="3"/>
 							C賞（応募ID 1枚）
 							オリジナルマグカップ4個セット
 						</label>
@@ -109,7 +109,7 @@
 					<div class="col-md-6 col-sm-6 col-xs-6">
 						<img alt="a" src="${APP_CONTEXT }/resources/images/d.png"><br>
 						<label>
-							<input type="radio" name="i_source">
+							<form:radiobutton path="courses" value="4"/>
 							D賞（応募ID 1枚）
 							オリジナルトランプ
 						</label>
@@ -134,7 +134,8 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<input type="text" class="input-text"> 
+					<!-- <input type="text" class="input-text">  -->
+					<form:input path="workplace" cssClass="input-text"/>
 				</div>
 			</div>
 		</div>
@@ -156,7 +157,8 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<input type="text" class="input-text"> 
+					<!-- <input type="text" class="input-text">  -->
+					<form:input path="department" cssClass="input-text"/>
 				</div>
 			</div>
 		</div>
@@ -181,7 +183,8 @@
 						 姓 &nbsp;
 					</div>
 					<div class="col-md-10 col-sm-10 col-xs-10 nopadding">
-						<input type="text" class="input-name-text ">
+						<!-- <input type="text" class="input-name-text "> -->
+						<form:input path="firstName" cssClass="input-name-text"/>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12 nopadding">
@@ -189,7 +192,8 @@
 						名 &nbsp;
 					</div>
 					<div class="col-md-10 col-sm-10 col-xs-10 nopadding">
-						<input type="text" class="input-name-text ">
+						<!-- <input type="text" class="input-name-text "> -->
+						<form:input path="lastName" cssClass="input-name-text"/>
 					</div>
 				</div>
 			</div>
@@ -215,7 +219,8 @@
 						 セイ &nbsp;
 					</div>
 					<div class="col-md-10 col-sm-10 col-xs-10 nopadding">
-						<input type="text" class="input-name-text ">
+						<!-- <input type="text" class="input-name-text "> -->
+						<form:input path="firstNameKana" cssClass="input-name-text"/>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12 nopadding">
@@ -223,7 +228,8 @@
 						メイ &nbsp;
 					</div>
 					<div class="col-md-10 col-sm-10 col-xs-10 nopadding">
-						<input type="text" class="input-name-text ">
+						<!-- <input type="text" class="input-name-text "> -->
+						<form:input path="lastNameKana" cssClass="input-name-text"/>
 					</div>
 				</div>
 			</div>
@@ -246,12 +252,14 @@
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
 					<label>
-						<input type="radio" name="sex">
+						<!-- <input type="radio" name="sex" checked="checked"> -->
+						<form:radiobutton path="gender" value="男" checked="checked"/>
 						男
 					</label>
 					&nbsp;
 					<label>
-						<input type="radio" name="sex">
+						<!-- <input type="radio" name="sex"> -->
+						<form:radiobutton path="gender" value="女"/>
 						女
 					</label>
 				</div>
@@ -273,7 +281,8 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<input type="text" class="input-text"> 
+					<!-- <input type="text" class="input-text">  -->
+					<form:input path="email" cssClass="input-text"/>
 				</div>
 			</div>
 		</div>
@@ -293,7 +302,8 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<input type="text" class="input-text"> 
+					<!-- <input type="text" class="input-text">  -->
+					<form:input path="emailConfirm" cssClass="input-text"/>
 				</div>
 			</div>
 		</div>
@@ -322,8 +332,12 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<div class="col-md-6 col-sm-6 col-xs-12 margin-bottom-row-responsive">
-					<input type="text" class="input-text-area">-<input type="text" class="input-text-area">
+					<div class="col-md-6 col-sm-6 col-xs-12 margin-bottom-row-responsive nopadding">
+					<!-- <input type="text" class="input-text-area"> -->
+					<form:input path="zip1" cssClass="input-text-area"/>
+					-
+					<form:input path="zip2" cssClass="input-text-area"/>
+					<!-- <input type="text" class="input-text-area"> -->
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-12 ">
 					<a class="link-area"><img alt="" src="${APP_CONTEXT }/resources/images/zipcode_03.png" width="80"></a>
@@ -348,9 +362,13 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<select>
+					<!-- <select>
 						<option selected="selected">--末選択--</option>
-					</select> 
+					</select>  -->
+					<form:select path="state">
+						<form:option value="-1">--末選択--</form:option>
+						<form:options items="${states }" itemValue="id" itemLabel="name"></form:options>
+					</form:select>
 				</div>
 			</div>
 		</div>
@@ -362,7 +380,7 @@
 			<div class="row-left">
 			<div class="row">
 				<div class="col-md-10 col-sm-10 col-xs-10">
-				メールアドレス (確認用)</div>
+				市区郡 (全角)</div>
 				<div class="col-md-2 col-sm-2 col-xs-2"><img alt="" src="${APP_CONTEXT }/resources/images/title2.png">
 			</div>
 			</div>
@@ -371,7 +389,8 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<input type="text" class="input-text"> 
+					<!-- <input type="text" class="input-text">  -->
+					<form:input path="city" cssClass="input-text"/>
 				</div>
 			</div>
 		</div>
@@ -392,7 +411,8 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<input type="text" class="input-text"> 
+					<!-- <input type="text" class="input-text"> -->
+					<form:input path="address" cssClass="input-text"/> 
 				</div>
 			</div>
 		</div>
@@ -413,9 +433,12 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<input type="text" class="input-text-phone">-
-					<input type="text" class="input-text-phone">-
-					<input type="text" class="input-text-phone">
+					<!-- <input type="text" class="input-text-phone"> -->
+					<form:input path="phone1" cssClass="input-text-phone"/>-
+					<!-- <input type="text" class="input-text-phone"> -->
+					<form:input path="phone2" cssClass="input-text-phone"/>-
+					<!-- <input type="text" class="input-text-phone"> -->
+					<form:input path="phone3" cssClass="input-text-phone"/>
 				</div>
 			</div>
 		</div>
@@ -436,7 +459,8 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<input type="text" class="input-text"> 
+					<!-- <input type="text" class="input-text">  -->
+					<form:input path="supplier" cssClass="input-text"/>
 				</div>
 			</div>
 		</div>
@@ -457,28 +481,29 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="checkbox">キムワイプS-200</label>
+					<label><!-- <input type="checkbox"> -->
+					<form:checkbox path="q1" value="1"/>キムワイプS-200</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="checkbox">キムワイプM-150</label>
+					<label><form:checkbox path="q1" value="2"/>キムワイプM-150</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="checkbox">キムワイプL-100</label>
+					<label><form:checkbox path="q1" value="3"/>キムワイプL-100</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="checkbox">JKワイパー150-S</label>
+					<label><form:checkbox path="q1" value="4"/>JKワイパー150-S</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="checkbox">JKワイパー100-S</label>
+					<label><form:checkbox path="q1" value="5"/>JKワイパー100-S</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="checkbox">ケイドライ132-S</label>
+					<label><form:checkbox path="q1" value="6"/>ケイドライ132-S</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="checkbox">キムタオル4つ折り(茶色)</label>
+					<label><form:checkbox path="q1" value="7"/>キムタオル4つ折り(茶色)</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="checkbox">キムタオルホワイト 4つ折り</label>
+					<label><form:checkbox path="q1" value="8"/>キムタオルホワイト 4つ折り</label>
 				</div>
 			</div>
 		</div>
@@ -500,31 +525,32 @@
 			<div class="row-right row nomargin">
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="radio">
+						<!-- <input type="radio"> -->
+						<form:radiobutton path="q2" value="1"/>
 						1～2ケース
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="radio">
+						<form:radiobutton path="q2" value="2"/>
 						3～4ケース
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="radio">
+						<form:radiobutton path="q2" value="3"/>
 						5～9ケース　
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="radio">
+						<form:radiobutton path="q2" value="4"/>
 						10～29ケース
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="radio">
+						<form:radiobutton path="q2" value="5"/>
 						30ケース以上
 					</label>
 				</div>
@@ -547,40 +573,41 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="radio">
+					<label><form:radiobutton path="q3" value="1"/>
 					官公庁研究機関
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="radio">
+					<label><form:radiobutton path="q3" value="2"/>
 					大学
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="radio">
+					<label><form:radiobutton path="q3" value="3"/>
 					各種学校
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="radio">
+					<label><form:radiobutton path="q3" value="4"/>
 					民間企業研究機関
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="radio">
+					<label><form:radiobutton path="q3" value="5"/>
 					工場
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="radio">
+					<label><form:radiobutton path="q3" value="6"/>
 					病院
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><input type="radio">
+					<label><form:radiobutton path="q3" value="7"/>
 					その他
 					</label>
-					<input type="text">
+					<!-- <input type="text"> -->
+					<form:input path="otherq3"/>
 				</div>
 			</div>
 		</div>
@@ -602,61 +629,62 @@
 			<div class="row-right row nomargin">
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<!-- <input type="checkbox"> -->
+						<form:checkbox path="q4" value="1"/>
 						作業台のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="2"/>
 						実験器具のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="3"/>
 						油のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="4"/>
 						薬液のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="5"/>
 						水のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="6"/>
 						機材・器具・部品のふきあげ
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="7"/>
 						傷つきやすい物のふきあげ
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="8"/>
 						レンズのふきあげ
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="9"/>
 						検査工程
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<input type="checkbox">
+						<form:checkbox path="q4" value="10"/>
 						布ウエスの代用
 					</label>
 				</div>
@@ -678,7 +706,8 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 row-input-text">
-					<textarea rows="5" cols="" class="input-textarea"></textarea>
+					<!-- <textarea rows="5" cols="" class="input-textarea"></textarea> -->
+					<form:textarea path="q10" cssClass="input-textarea" rows="5"/>
 				</div>
 			</div>
 		</div>
@@ -715,13 +744,15 @@
 			</div>
 		</div>
 	</div>
-	
-	</form>
-	<div class="row page-to-top">
-		<div class="col-md-12">
-			<img src="${APP_CONTEXT }/resources/images/index_header_3.png">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center;margin-top: 10px;">
+			<%-- <input type="image" src="${APP_CONTEXT }/resources/images/title34.png" height="40"> --%>
+			<input type="submit" value="the fack">
 		</div>
 	</div>
+
+	</form:form>
+	
 </div>
 </body>
 </html>
