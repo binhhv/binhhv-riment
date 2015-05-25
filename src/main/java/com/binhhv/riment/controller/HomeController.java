@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.binhhv.riment.constants.WebConstants;
 import com.binhhv.riment.model.SurveyEntity;
 import com.binhhv.riment.service.StateService;
 import com.binhhv.riment.service.SurveyService;
@@ -50,9 +52,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = {"/survey"}, method = RequestMethod.GET)
-	public String goToSurvey(@RequestParam(value="id", required=false)String id,Locale locale, Model model) {
+	public String goToSurvey(@RequestParam(value="id", required=false)String id,Locale locale, Model model,HttpSession session) {
 		logger.info("Welcome survey! The client locale is {}.", locale);
-		
+		Object surveyObject =  session.getAttribute("survey");
+		model.addAttribute("surveyObject", surveyObject);
 		if(id != null){
 			try {
 				int idSurvey = Integer.parseInt(id);
@@ -66,7 +69,13 @@ public class HomeController {
 						return "content-page-2";
 					}
 					else{
-						model.addAttribute("form", new SurveyEntity());
+						SurveyEntity surveyEntity;
+						if(surveyObject != null){
+							surveyEntity = new SurveyEntity((SurveyEntity)surveyObject);}
+						else{
+							surveyEntity = new SurveyEntity();
+						}
+						model.addAttribute("form",surveyEntity);
 						return "content-page-1";
 					}
 				}
@@ -81,9 +90,26 @@ public class HomeController {
 	
 	}
 	@RequestMapping(value="/addSurvey",method =  RequestMethod.POST)
-	public String addSurvey(@ModelAttribute("form") SurveyEntity form,HttpServletRequest request){
+	public String addSurvey(@ModelAttribute("form") SurveyEntity form,HttpServletRequest request,HttpSession session,Model model){
 		surveyService.addSurvey(form);
-		return "redirect:/";
+		session.setAttribute("survey", form);
+		
+		Object surveyObject =  session.getAttribute("survey");
+		model.addAttribute("surveyObject", surveyObject);
+		model.addAttribute("Constants",new WebConstants());
+		return "confirm-page";
 	}
 	
+	@RequestMapping(value="/confirmSurvey",method=RequestMethod.GET)
+	public String confirmSurvey(HttpServletRequest request, HttpSession session,Model model){
+		
+		return "result-page";
+	}
+	
+	public void setSessionSurvey(SurveyEntity surveyEntity){
+		
+	}
+	public void destroySessionSurvey(){
+		
+	}
 }

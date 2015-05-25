@@ -1,11 +1,14 @@
 package com.binhhv.riment.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="survey")
@@ -27,13 +30,17 @@ public class SurveyEntity {
 	@Column
 	private String courses;
 	
+	@Transient
 	private String firstName;
+	@Transient
 	private String lastName;
 	
 	@Column
 	private String name;
 	
+	@Transient
 	private String firstNameKana;
+	@Transient
 	private String lastNameKana;
 	
 	@Column
@@ -48,9 +55,11 @@ public class SurveyEntity {
 	@Column
 	private String email;
 	
+	@Transient
 	private String emailConfirm;
-	
+	@Transient
 	private String zip1;
+	@Transient
 	private String zip2;
 	
 	@Column
@@ -68,8 +77,11 @@ public class SurveyEntity {
 	@Column
 	private String gender;
 	
+	@Transient
 	private String phone1;
+	@Transient
 	private String phone2;
+	@Transient
 	private String phone3;
 	
 	@Column
@@ -87,11 +99,17 @@ public class SurveyEntity {
 	@Column
 	private String q2;
 	
+	@Transient
+	private List<String> q1List;
+	
 	@Column
 	private String q3;
 	
 	@Column
 	private String q4;
+	
+	@Transient
+	private List<String> q4List;
 	
 	@Column
 	private String q5;
@@ -485,6 +503,7 @@ public class SurveyEntity {
 		super();
 	}
 	
+	@Transient
 	private String otherq3;
 
 	public String getOtherq3() {
@@ -496,5 +515,68 @@ public class SurveyEntity {
 	}
 	
 	
+
+	public SurveyEntity(SurveyEntity surveyEntity){
+		super();
+		this.id = surveyEntity.getId();
+		this.created = surveyEntity.getCreated();
+		this.idsp1 = surveyEntity.getIdsp1();
+		this.idsp2 = surveyEntity.getIdsp2();
+		this.courses = surveyEntity.getCourses();
+		this.firstName = surveyEntity.getFirstName();
+		this.lastName = surveyEntity.getLastName();
+		this.name = surveyEntity.getName();
+		this.firstNameKana = surveyEntity.getFirstNameKana();
+		this.lastNameKana = surveyEntity.getLastNameKana();
+		this.namekana = surveyEntity.getNamekana();
+		this.workplace = surveyEntity.getWorkplace();
+		this.department = surveyEntity.getDepartment();
+		this.email = surveyEntity.getEmail();
+		this.emailConfirm = surveyEntity.getEmailConfirm();
+		this.zip1 = surveyEntity.getZip1();
+		this.zip2 = surveyEntity.getZip2();
+		this.zip = surveyEntity.getZip();
+		this.state = surveyEntity.getState();
+		this.city = surveyEntity.getCity();
+		this.address = surveyEntity.getAddress();
+		this.gender = surveyEntity.getGender();
+		this.phone1 = surveyEntity.getPhone1();
+		this.phone2 = surveyEntity.getPhone2();
+		this.phone3 = surveyEntity.getPhone3();
+		this.phonenumber = surveyEntity.getPhonenumber();
+		this.supplier = surveyEntity.getSupplier();
+		this.idsurvey = surveyEntity.getIdsurvey();
+		this.q1 = surveyEntity.getQ1();
+		this.q2 = surveyEntity.getQ2();
+		this.q1List= surveyEntity.getQ1List();
+		this.q3 = surveyEntity.getQ3();
+		this.q4 = surveyEntity.getQ4();
+		this.q4List = surveyEntity.getQ4List();
+		this.q5 = surveyEntity.getQ5();
+		this.q6 = surveyEntity.getQ6();
+		this.q7 = surveyEntity.getQ7();
+		this.q8 = surveyEntity.getQ8();
+		this.q9 = surveyEntity.getQ9();
+		this.q10 = surveyEntity.getQ10();
+		this.ip = surveyEntity.getIp();
+		this.useragent = surveyEntity.getUseragent();
+		this.otherq3 = surveyEntity.getOtherq3();
+	}
+
+	public List<String> getQ1List() {
+		return q1List;
+	}
+
+	public void setQ1List(List<String> q1List) {
+		this.q1List = q1List;
+	}
+
+	public List<String> getQ4List() {
+		return q4List;
+	}
+
+	public void setQ4List(List<String> q4List) {
+		this.q4List = q4List;
+	}
 	
 }

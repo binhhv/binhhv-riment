@@ -6,4 +6,5 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
+
 <c:set var="APP_CONTEXT" value="${pageContext.request.contextPath}" />

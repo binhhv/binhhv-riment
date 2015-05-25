@@ -44,7 +44,7 @@
 		<div class="col-md-7 col-sm-12 col-xs-12 nopadding-left">
 			<div class="row-right row nomargin">
 				<div class="col-md-12 col-sm-12 col-xs-12 margin-bottom-row">
-					1枚目<form:input path="idsp1"/> 
+					1枚目<form:input path="idsp1" /> 
 				</div>
 				
 				<div class="col-md-12 col-sm-12 col-xs-12">
@@ -482,28 +482,28 @@
 			<div class="row-right row nomargin">
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label><!-- <input type="checkbox"> -->
-					<form:checkbox path="q1" value="1"/>キムワイプS-200</label>
+					<form:checkbox path="q1List" value="1"/>キムワイプS-200</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><form:checkbox path="q1" value="2"/>キムワイプM-150</label>
+					<label><form:checkbox path="q1List" value="2"/>キムワイプM-150</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><form:checkbox path="q1" value="3"/>キムワイプL-100</label>
+					<label><form:checkbox path="q1List" value="3"/>キムワイプL-100</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><form:checkbox path="q1" value="4"/>JKワイパー150-S</label>
+					<label><form:checkbox path="q1List" value="4"/>JKワイパー150-S</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><form:checkbox path="q1" value="5"/>JKワイパー100-S</label>
+					<label><form:checkbox path="q1List" value="5"/>JKワイパー100-S</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><form:checkbox path="q1" value="6"/>ケイドライ132-S</label>
+					<label><form:checkbox path="q1List" value="6"/>ケイドライ132-S</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><form:checkbox path="q1" value="7"/>キムタオル4つ折り(茶色)</label>
+					<label><form:checkbox path="q1List" value="7"/>キムタオル4つ折り(茶色)</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-					<label><form:checkbox path="q1" value="8"/>キムタオルホワイト 4つ折り</label>
+					<label><form:checkbox path="q1List" value="8"/>キムタオルホワイト 4つ折り</label>
 				</div>
 			</div>
 		</div>
@@ -630,61 +630,61 @@
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
 						<!-- <input type="checkbox"> -->
-						<form:checkbox path="q4" value="1"/>
+						<form:checkbox path="q4List" value="1"/>
 						作業台のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="2"/>
+						<form:checkbox path="q4List" value="2"/>
 						実験器具のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="3"/>
+						<form:checkbox path="q4List" value="3"/>
 						油のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="4"/>
+						<form:checkbox path="q4List" value="4"/>
 						薬液のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="5"/>
+						<form:checkbox path="q4List" value="5"/>
 						水のふきとり
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="6"/>
+						<form:checkbox path="q4List" value="6"/>
 						機材・器具・部品のふきあげ
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="7"/>
+						<form:checkbox path="q4List" value="7"/>
 						傷つきやすい物のふきあげ
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="8"/>
+						<form:checkbox path="q4List" value="8"/>
 						レンズのふきあげ
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="9"/>
+						<form:checkbox path="q4List" value="9"/>
 						検査工程
 					</label>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<label>
-						<form:checkbox path="q4" value="10"/>
+						<form:checkbox path="q4List" value="10"/>
 						布ウエスの代用
 					</label>
 				</div>
@@ -746,8 +746,8 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center;margin-top: 10px;">
-			<%-- <input type="image" src="${APP_CONTEXT }/resources/images/title34.png" height="40"> --%>
-			<input type="submit" value="the fack">
+			<input type="image" src="${APP_CONTEXT }/resources/images/title34.png" height="40">
+			<!-- <input type="submit" value="the fack"> -->
 		</div>
 	</div>
 
